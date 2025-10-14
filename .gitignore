@@ -1,0 +1,12 @@
+# Temp files
+*.swp
+*.swo
+*.tmp
+*.bak
+*.log
+
+# Tmux plugins
+tmux/plugins/*
+!tmux/plugins/tpm/
+
+# 
