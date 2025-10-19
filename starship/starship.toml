@@ -3,6 +3,7 @@ format = """
 $directory\
 [](fg:#5DE4C7 bg:#002F2C)\
 $nodejs$php$python$c\
+$container\
 $git_branch\
 $git_status\
 [](fg:#002F2C)\
@@ -30,6 +31,11 @@ format = '[[ $symbol $branch ](fg:#5DE4C7 bg:#002F2C bold)]($style)'
 [git_status]
 style = "bg:#002F2C"
 format = '[[($all_status$ahead_behind )](fg:#5DE4C7 bg:#002F2C)]($style)'
+
+[container]
+symbol = ""
+style = "bg:#002F2C"
+format = '[[ $symbol $name ](fg:#5DE4C7 bg:#002F2C)]($style)'
 
 [nodejs]
 symbol = ""
