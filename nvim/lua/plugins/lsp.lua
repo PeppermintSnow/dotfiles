@@ -17,15 +17,18 @@ return {
           },
         },
       }
-      vim.lsp.config["clangd"] = {
+      vim.lsp.config["c_ls"] = {
         cmd = { "clangd" },
         filetypes = { "c", "h" },
         capabilities = capabilities,
       }
-
+      vim.lsp.config["ts_ls"] = {
+        cmd = { "vtsls", "--stdio" },
+      }
       -- Enable servers
       vim.lsp.enable("lua_ls")
-      vim.lsp.enable("clangd")
+      vim.lsp.enable("c_ls")
+      vim.lsp.enable("ts_ls")
       vim.lsp.enable("jdtls")
     end
   },
