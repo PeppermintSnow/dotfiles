@@ -32,11 +32,16 @@ return {
       vim.lsp.config["java_ls"] = {
         cmd = { "jdtls" }
       }
+      -- Installed from pacman: bash-language-server
+      vim.lsp.config["bash_ls"] = {
+        cmd = { "bash-language-server", "start" }
+      }
       -- Enable servers
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("c_ls")
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("java_ls")
+      vim.lsp.enable("bash_ls")
     end
   },
 }
