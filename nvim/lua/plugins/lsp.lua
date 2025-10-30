@@ -36,12 +36,18 @@ return {
       vim.lsp.config["bash_ls"] = {
         cmd = { "bash-language-server", "start" }
       }
+      -- Installed from pacman: python-lsp-server
+      vim.lsp.config["python_ls"] = {
+        cmd = { "pylsp" }
+      }
+
       -- Enable servers
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("c_ls")
       vim.lsp.enable("ts_ls")
       vim.lsp.enable("java_ls")
       vim.lsp.enable("bash_ls")
+      vim.lsp.enable("python_ls")
     end
   },
 }
