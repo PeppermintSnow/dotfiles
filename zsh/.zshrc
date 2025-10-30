@@ -17,3 +17,5 @@ if [[ "$(tty)" == "/dev/tty1" ]]; then
 fi
 
 eval "$(starship init zsh)"
+
+export PATH="$PATH:$HOME/.dotfiles/bin"
