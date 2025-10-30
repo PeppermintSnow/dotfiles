@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+mpv --ytdl-format="bestvideo[height<=144]+bestaudio/best[height<=144]" "$@"
