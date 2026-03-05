@@ -18,4 +18,12 @@ fi
 
 eval "$(starship init zsh)"
 
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$PATH:/opt/flutter/bin"
+
 export PATH="$PATH:$HOME/.dotfiles/bin"
+
