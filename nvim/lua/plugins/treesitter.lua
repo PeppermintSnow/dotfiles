@@ -5,7 +5,10 @@ return {
     branch = "main",
     build = ":TSUpdate",
     opts = {
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = true
+      },
       ensure_installed = {
         "bash",
         "c",
@@ -25,6 +28,7 @@ return {
         "xml",
         "php",
         "java",
+        "dart"
       }
     }
   },

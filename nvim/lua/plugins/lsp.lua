@@ -55,6 +55,43 @@ return {
         root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" },
         capabilities = capabilities
       }
+      -- Installed from flutter's tarball
+      vim.lsp.config["dart_ls"] = {
+        cmd = { "dart", "language-server", "--protocol=lsp" },
+        filetypes = { "dart" },
+        root_markers = { "pubspec.yaml" },
+        init_options = {
+          closingLabels = true,
+          flutterOutline = true,
+          onlyAnalyzeProjectsWithOpenFiles = true,
+          outline = true,
+          suggestFromUnimportedLibraries = true
+        },
+        settings = {
+          dart = {
+            completeFunctionCalls = true,
+            showTodos = true
+          }
+        },
+        capabilities = capabilities
+      }
+
+      -- Installed from yay: phpactor
+      vim.lsp.config["php_ls"] = {
+        cmd = { "phpactor", "language-server" },
+        filetypes = { "php" },
+        root_markers = { ".git", "composer.json", ".phpactor.json", ".phpactor.yml" },
+        workspace_required = true,
+        capabilities = capabilities
+      }
+
+      -- Installed from the GitHub repository: https://github.com/laravel-ls/laravel-ls
+      vim.lsp.config["laravel_ls"] = {
+        cmd = { "laravel-ls" },
+        filetypes = { "php", "blade" },
+        rootmarkers = { "artisan" },
+        capabilities = capabilities
+      }
 
       -- Enable servers
       vim.lsp.enable("lua_ls")
@@ -63,6 +100,9 @@ return {
       vim.lsp.enable("java_ls")
       vim.lsp.enable("bash_ls")
       vim.lsp.enable("python_ls")
+      vim.lsp.enable("dart_ls")
+      vim.lsp.enable("php_ls")
+      -- vim.lsp.enable("laravel_ls")
     end
   },
 }
