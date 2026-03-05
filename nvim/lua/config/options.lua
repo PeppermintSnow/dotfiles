@@ -18,6 +18,7 @@ vim.opt.cursorline = true
 
 -- Display config
 vim.opt.signcolumn = "yes"
+vim.opt.winborder = "rounded"
 
 -- Clipboard config
 vim.opt.clipboard = "unnamedplus"
