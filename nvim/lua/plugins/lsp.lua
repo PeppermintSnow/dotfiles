@@ -19,9 +19,7 @@ return {
         },
       })
       -- Installed from pacman: clang
-      vim.lsp.config("clangd", {
-        filetypes = { "c", "h" }
-      })
+      vim.lsp.config("clangd", {})
       -- Installed from pacman: rust-analyzer
       vim.lsp.config("rust_analyzer", {
         settings = {
