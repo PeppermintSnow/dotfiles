@@ -8,14 +8,25 @@
 # See the river(1), riverctl(1), and rivertile(1) man pages for complete
 # documentation.
 
-swww-daemon &
-swww img ~/babi/babi.png
+awww-daemon &
+awww img ~/babi/babi.png
 foot -e zsh -c "tmux attach -t main || tmux new -s main" &
 
 # Screensharing
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
-systemctl --user restart xdg-desktop-portal
+export XDG_CURRENT_DESKTOP=river
+export XDG_SESSION_TYPE=wayland
+
+systemctl --user import-environment \
+  WAYLAND_DISPLAY \
+  DISPLAY \
+  XDG_CURRENT_DESKTOP \
+  XDG_SESSION_TYPE
+
+dbus-update-activation-environment --systemd \
+  WAYLAND_DISPLAY="$WAYLAND_DISPLAY" \
+  DISPLAY="$DISPLAY" \
+  XDG_CURRENT_DESKTOP="$XDG_CURRENT_DESKTOP" \
+  XDG_SESSION_TYPE="$XDG_SESSION_TYPE"
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
